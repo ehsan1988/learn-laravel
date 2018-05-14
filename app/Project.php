@@ -13,4 +13,21 @@ class Project extends Model
         'company_id',
         'day'
     ];
+
+
+
+    public function company()
+    {
+        return $this->belongsTo('App\Company');
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany('App\Task');
+    }
+    //many to many--------------
+    public function user()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
