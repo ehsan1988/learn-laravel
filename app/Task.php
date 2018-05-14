@@ -4,6 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Task
+ *
+ * @property-read \App\Company $company
+ * @property-read \App\Project $project
+ * @property-read \App\User $user
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[] $users
+ * @mixin \Eloquent
+ */
 class Task extends Model
 {
     protected $fillable = [
@@ -33,7 +42,7 @@ class Task extends Model
     //one to many-------------------------------------------------
 
 
-    
+
     //many to many--------------
     public function users()
     {
