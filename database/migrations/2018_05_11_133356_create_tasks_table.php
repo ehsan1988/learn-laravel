@@ -21,13 +21,13 @@ class CreateTasksTable extends Migration
       $table->integer('hours')->unsigned();
 
       $table->integer('project_id');
-      $table->foreign('user_id')->references('id')->on('projects');
+//      $table->foreign('user_id')->references('id')->on('projects');
 
       $table->integer('company_id')->unsigned();
-      $table->foreign('company_id')->references('id')->on('companies');
+//      $table->foreign('company_id')->references('id')->on('companies');
 
       $table->integer('user_id');
-      $table->foreign('user_id')->references('id')->on('users');
+//      $table->foreign('user_id')->references('id')->on('users');
 
       $table->timestamps();
     });
