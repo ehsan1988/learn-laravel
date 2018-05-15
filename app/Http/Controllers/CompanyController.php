@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use foo\bar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -25,7 +27,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('companies.create');
     }
 
     /**
@@ -36,7 +38,14 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::check()) {
+            Company::create([
+                'name' => $request->input('name'),
+                'description' => $request->input('description'),
+                'user_id' => Auth::user()->id
+            ]);
+        }
+        return redirect(route('companies.index'));
     }
 
     /**
@@ -47,7 +56,9 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+//        $company = Company::find($company->id);
+//        return view('companies.show',compact('company'));
+        return view('companies.show', ['company' => $company]);
     }
 
     /**
@@ -58,7 +69,8 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+//        $company = Company::find($company->id);
+        return view('companies.edit', ['company' => $company]);
     }
 
     /**
@@ -70,7 +82,17 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        //save data
+        $companyUpdate = $company->update([
+            'name' => $request->input('name'),
+            'description' => $request->input('description')
+        ]);
+        if ($companyUpdate) {
+            return redirect()->route('companies.show', ['company' => $company->id])
+                ->with('success', 'Company updated successfully');
+        }
+        //redirect
+        return back()->withInput();
     }
 
     /**
@@ -81,6 +103,11 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $companyDelete = $company->delete();
+        if ($companyDelete) {
+            return redirect()->route('companies.index')->with('success', 'شرکت با موفقیت حذف شد');
+        }
+        return back()->withInput()->with('error', 'متاسفانه شرکت مورد نظر حذف نشد');
+
     }
 }

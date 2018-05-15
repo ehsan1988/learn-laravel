@@ -24,11 +24,11 @@ class CreateUsersTable extends Migration
             });
         }
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id')->unsigned();
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
-            $table->string('city');
+            $table->integer('role_id')->unsigned()->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('city')->nullable();
         });
     }
 
