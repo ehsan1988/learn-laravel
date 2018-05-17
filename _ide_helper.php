@@ -1,30 +1,14 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.21 on 2018-05-14 15:19:39.
+ * Generated for Laravel 5.6.21 on 2018-05-17 07:17:59.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
  */
-namespace Illuminate\Support{
-    /**
-     * @method Fluent first()
-     * @method Fluent after($column)
-     * @method Fluent change()
-     * @method Fluent nullable()
-     * @method Fluent unsigned()
-     * @method Fluent unique()
-     * @method Fluent index()
-     * @method Fluent primary()
-     * @method Fluent default($value)
-     * @method Fluent onUpdate($value)
-     * @method Fluent onDelete($value)
-     * @method Fluent references($value)
-     * @method Fluent on($value)
-     */
-    class Fluent {}
+
 namespace Illuminate\Support\Facades {
 
     class App {
@@ -14761,3 +14745,20 @@ namespace  {
 
 
 
+namespace Illuminate\Support{
+    /**
+     * @method Fluent first()
+     * @method Fluent after($column)
+     * @method Fluent change()
+     * @method Fluent nullable()
+     * @method Fluent unsigned()
+     * @method Fluent unique()
+     * @method Fluent index()
+     * @method Fluent primary()
+     * @method Fluent default($value)
+     * @method Fluent onUpdate($value)
+     * @method Fluent onDelete($value)
+     * @method Fluent references($value)
+     * @method Fluent on($value)
+     */
+    class Fluent {}
