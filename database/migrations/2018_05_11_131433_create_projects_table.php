@@ -20,10 +20,10 @@ class CreateProjectsTable extends Migration
             $table->integer('days')->unsigned()->nullable();
 
             $table->integer('company_id')->unsigned()->nullable();
-            $table->foreign('company_id')->references('id')->on('companies');
+//            $table->foreign('company_id')->references('id')->on('companies');
 
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         });
