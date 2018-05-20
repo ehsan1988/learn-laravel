@@ -68,7 +68,7 @@
                                aria-describedby="helpId" placeholder="نام پروژه">
                     </div>--}}
 
-                    <input type="hidden" name="commentable_type" value="projects">
+                    <input type="hidden" name="commentable_type" value="App\projects">
                     <input type="hidden" name="commentable_id" value="{{$project->id}}">
 
                     <div class="form-group">
