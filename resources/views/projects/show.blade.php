@@ -86,12 +86,24 @@
 
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary" type="submit"> اضافه کردن پروژه</button>
+                        <button class="btn btn-primary" type="submit"> اضافه کردن کامنت</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <section class="container">
+        <h5>comments</h5>
+        <div class="row">
+            @foreach ($project->comments as $comment)
+                <div class="col-md-5">
+                    <h5 class="text-center text-secondary">{{$comment->body}}</h5>
+                    <h6 class="text-center text-secondary">{{$comment->url}}</h6>
+                </div>
+            @endforeach
+        </div>
+    </section>
 @endsection
 <script>
     function deleteItem() {
