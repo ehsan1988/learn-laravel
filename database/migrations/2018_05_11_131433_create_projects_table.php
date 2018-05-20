@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('name', 50);
             $table->longText('description')->nullable();
-            $table->integer('days')->unsigned()->nullable();
+            $table->integer('days')->unsigned()->nullable()->default(1);
 
             $table->integer('company_id')->unsigned()->nullable();
 //            $table->foreign('company_id')->references('id')->on('companies');
